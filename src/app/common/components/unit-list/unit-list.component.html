@@ -1,8 +1,10 @@
 <div class="unit-list-overlay">
-  <input #searchInput type="text" placeholder="Search units" [(ngModel)]="searchTerm" (input)="filterUnits()">
+  <div class="search">
+    <input type="text" placeholder="Search units" [(ngModel)]="searchTerm" (input)="filterUnits()">
+  </div>
   <ul>
     <li *ngFor="let unit of filteredUnits">
-      {{ unit.name }} ({{ unit.lat }}, {{ unit.lng }})
+    {{ unit?.id }} - {{ unit?.name }} ({{ unit?.lat }}, {{ unit?.lng }})
     </li>
   </ul>
 </div>
